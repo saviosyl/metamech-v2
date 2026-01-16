@@ -3,17 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>MetaMech Solution | Engineering Automation That Saves Design Hours</title>
-<meta name="description" content="Engineering automation and SOLIDWORKS macros that save design hours, reduce errors, and standardise outputs for production teams.">
+<meta name="description" content="Engineering automation and SOLIDWORKS macros that save design hours, reduce errors, and deliver measurable ROI for production teams.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-XXXXXXXXXX');
-</script>
 
 <style>
 :root{
@@ -135,30 +126,66 @@ padding:18px;
 }
 .kpi strong{font-size:18px}
 
-/* ROI */
+/* ROI CALCULATOR */
 .section{padding:80px 0}
-.roi{
+
+.roi-wrap{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:28px;
+margin-top:40px;
+}
+
+.roi-card{
 background:linear-gradient(180deg,#0f1c34,#0b1428);
 border:1px solid var(--line);
 border-radius:22px;
-padding:34px;
+padding:30px;
 }
-.roi-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:16px;
+
+.roi-card h3{margin-top:0}
+
+.roi-field{
+margin-bottom:16px;
 }
-.roi input{
+.roi-field label{
+display:block;
+font-size:14px;
+color:var(--muted);
+margin-bottom:6px;
+}
+.roi-field input,
+.roi-field select{
+width:100%;
 padding:14px;
 border-radius:12px;
 border:1px solid var(--line);
 background:#0b162c;
 color:var(--text);
+font-size:15px;
 }
+
 .roi-result{
-margin-top:22px;
-font-size:20px;
+background:linear-gradient(180deg,var(--panel),var(--panel2));
+border:1px solid var(--line);
+border-radius:16px;
+padding:18px;
+margin-bottom:14px;
+font-size:18px;
 font-weight:700;
+}
+
+.roi-note{
+font-size:13px;
+color:var(--muted);
+margin-top:10px;
+}
+
+@media(max-width:900px){
+.hero{grid-template-columns:1fr}
+.hero h1{font-size:38px}
+.kpis{grid-template-columns:1fr}
+.roi-wrap{grid-template-columns:1fr}
 }
 
 /* FOOTER */
@@ -167,12 +194,6 @@ border-top:1px solid var(--line);
 padding:32px 0;
 color:var(--muted);
 font-size:14px;
-}
-
-@media(max-width:900px){
-.hero{grid-template-columns:1fr}
-.hero h1{font-size:38px}
-.kpis{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -203,9 +224,7 @@ ENGINEERING <span class="accent">AUTOMATION</span> THAT<br>
 SAVES DESIGN HOURS
 </h1>
 
-<p>
-Fast, reliable SolidWorks automation built for real production teams.
-</p>
+<p>Fast, reliable SolidWorks automation built for real production teams.</p>
 
 <p>
 MetaMech Solution builds high-performance SolidWorks tools and custom macros
@@ -230,22 +249,74 @@ your projects.
 <!-- ROI -->
 <section id="roi" class="section">
 <div class="container">
-<h2>Calculate Your ROI</h2>
-<p class="muted">See how quickly automation pays for itself.</p>
+<h2>ROI Calculator</h2>
+<p class="muted">
+Estimate weekly, monthly, and annual savings based on hours saved per engineer.
+</p>
 
-<div class="roi">
-<div class="roi-grid">
-<input id="eng" type="number" placeholder="Engineers" value="3">
-<input id="hrs" type="number" placeholder="Hours saved / week" value="3">
-<input id="rate" type="number" placeholder="Hourly cost (€)" value="45">
+<div class="roi-wrap">
+
+<!-- INPUTS -->
+<div class="roi-card">
+<h3>Inputs</h3>
+
+<div class="roi-field">
+<label>Engineers using the tool</label>
+<input id="eng" type="number" value="2">
 </div>
 
-<div class="roi-result" id="roiResult">Estimated annual savings: —</div>
-
-<div class="actions" style="margin-top:18px">
-<a class="btn primary" href="/products/solidworks-automation-suite/">VIEW PRICING</a>
-<a class="btn" href="/contact/">REQUEST DEMO</a>
+<div class="roi-field">
+<label>Hours saved per week (per engineer)</label>
+<input id="hrs" type="number" value="2">
 </div>
+
+<div class="roi-field">
+<label>Hourly cost (€)</label>
+<input id="rate" type="number" value="45">
+</div>
+
+<div class="roi-field">
+<label>Weeks per year</label>
+<input id="weeks" type="number" value="48">
+</div>
+
+<div class="roi-field">
+<label>Select Plan</label>
+<select id="plan">
+<option value="499">Starter Pack – €499</option>
+<option value="999" selected>Standard Pack – €999</option>
+<option value="0">Enterprise – Custom</option>
+</select>
+</div>
+
+<div class="roi-field">
+<label>Tool cost (€)</label>
+<input id="cost" type="number" value="999">
+</div>
+
+<a class="btn primary" href="/products/solidworks-automation-suite/">
+CONTINUE TO CHECKOUT
+</a>
+
+<p class="roi-note">
+Tip: use your real internal cost rate (salary + overhead) for accurate ROI.
+</p>
+</div>
+
+<!-- OUTPUTS -->
+<div class="roi-card">
+<h3>Results</h3>
+
+<div class="roi-result" id="weekly">Weekly Savings: €0</div>
+<div class="roi-result" id="monthly">Monthly Savings: €0</div>
+<div class="roi-result" id="annual">Annual Savings: €0</div>
+<div class="roi-result" id="breakeven">Break-even: —</div>
+
+<p class="roi-note">
+Break-even is calculated only if a tool cost is entered.
+</p>
+</div>
+
 </div>
 </div>
 </section>
@@ -262,16 +333,32 @@ your projects.
 const eng=document.getElementById('eng');
 const hrs=document.getElementById('hrs');
 const rate=document.getElementById('rate');
-const out=document.getElementById('roiResult');
+const weeks=document.getElementById('weeks');
+const cost=document.getElementById('cost');
+
+const weekly=document.getElementById('weekly');
+const monthly=document.getElementById('monthly');
+const annual=document.getElementById('annual');
+const breakeven=document.getElementById('breakeven');
 
 function calc(){
-const v=+eng.value*+hrs.value*+rate.value*48;
-out.textContent=v
-?`Estimated annual savings: €${v.toLocaleString()}`
-:'Estimated annual savings: —';
-gtag('event','roi_calculated');
+const w=+eng.value*+hrs.value*+rate.value;
+const m=w*4.33;
+const a=w*+weeks.value;
+
+weekly.textContent=`Weekly Savings: €${w.toLocaleString()}`;
+monthly.textContent=`Monthly Savings: €${m.toLocaleString()}`;
+annual.textContent=`Annual Savings: €${a.toLocaleString()}`;
+
+if(+cost.value>0){
+breakeven.textContent=`Break-even: ${(cost.value/w).toFixed(1)} weeks`;
+}else{
+breakeven.textContent=`Break-even: —`;
 }
-[eng,hrs,rate].forEach(i=>i.addEventListener('input',calc));
+}
+
+[eng,hrs,rate,weeks,cost].forEach(i=>i.addEventListener('input',calc));
+calc();
 </script>
 
 </body>
