@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>MetaMech Solution | Engineering Automation Tool That Saves Design Hours</title>
+<title>MetaMech Solution | Engineering Automation That Saves Design Hours</title>
 <meta name="description" content="Engineering automation and SOLIDWORKS macros that save design hours, reduce errors, and deliver measurable ROI for production teams.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -37,15 +37,19 @@ a{text-decoration:none;color:inherit}
 /* HEADER */
 header{
 position:sticky;top:0;z-index:50;
-background:rgba(11,18,34,.9);
+background:rgba(11,18,34,.95);
 backdrop-filter:blur(10px);
 border-bottom:1px solid var(--line);
 }
 .nav{
 display:flex;align-items:center;justify-content:space-between;
-padding:14px 0;
+padding:16px 0;
 }
-.nav img{height:36px}
+.nav img{
+height:44px;
+display:block;
+filter:drop-shadow(0 0 6px rgba(22,179,184,.45));
+}
 .nav a{margin-left:18px;color:var(--muted);font-size:14px}
 .nav a:hover{color:var(--text)}
 
@@ -100,6 +104,7 @@ border-radius:14px;
 font-weight:700;
 border:1px solid var(--line);
 background:rgba(255,255,255,.03);
+cursor:pointer;
 }
 .btn.primary{
 background:linear-gradient(135deg,var(--accent),var(--accent2));
@@ -111,7 +116,7 @@ background:linear-gradient(135deg,#f0b429,#d39b1c);
 color:#07111a;
 }
 
-/* KPI CARDS */
+/* KPI */
 .kpis{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -126,67 +131,71 @@ padding:18px;
 }
 .kpi strong{font-size:18px}
 
-/* ROI CALCULATOR */
+/* SECTIONS */
 .section{padding:80px 0}
 
+/* ROI */
 .roi-wrap{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:28px;
-margin-top:40px;
+margin-top:36px;
 }
-
 .roi-card{
 background:linear-gradient(180deg,#0f1c34,#0b1428);
 border:1px solid var(--line);
 border-radius:22px;
 padding:30px;
 }
-
-.roi-card h3{margin-top:0}
-
-.roi-field{
-margin-bottom:16px;
-}
+.roi-field{margin-bottom:16px}
 .roi-field label{
-display:block;
-font-size:14px;
-color:var(--muted);
-margin-bottom:6px;
+display:block;font-size:14px;color:var(--muted);margin-bottom:6px;
 }
-.roi-field input,
-.roi-field select{
-width:100%;
-padding:14px;
-border-radius:12px;
-border:1px solid var(--line);
-background:#0b162c;
-color:var(--text);
-font-size:15px;
+.roi-field input,.roi-field select{
+width:100%;padding:14px;border-radius:12px;
+border:1px solid var(--line);background:#0b162c;color:var(--text);
 }
-
 .roi-result{
 background:linear-gradient(180deg,var(--panel),var(--panel2));
 border:1px solid var(--line);
 border-radius:16px;
 padding:18px;
 margin-bottom:14px;
-font-size:18px;
-font-weight:700;
+font-size:18px;font-weight:700;
 }
 
-.roi-note{
-font-size:13px;
-color:var(--muted);
-margin-top:10px;
+/* EMAIL CAPTURE */
+.email-box{
+margin-top:20px;
+padding-top:18px;
+border-top:1px solid var(--line);
+}
+.email-box input{
+width:100%;
+padding:14px;
+border-radius:12px;
+border:1px solid var(--line);
+background:#0b162c;
+color:var(--text);
+margin-bottom:12px;
 }
 
-@media(max-width:900px){
-.hero{grid-template-columns:1fr}
-.hero h1{font-size:38px}
-.kpis{grid-template-columns:1fr}
-.roi-wrap{grid-template-columns:1fr}
+/* AUTOMATION TOOLS */
+.tools-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:36px;
 }
+.tool-card{
+background:linear-gradient(180deg,#0f1c34,#0b1428);
+border:1px solid var(--line);
+border-radius:22px;
+padding:28px;
+}
+.tool-card h3{margin-top:0}
+.tool-card p{color:var(--muted)}
+.tool-card ul{padding-left:18px}
 
 /* FOOTER */
 footer{
@@ -194,6 +203,12 @@ border-top:1px solid var(--line);
 padding:32px 0;
 color:var(--muted);
 font-size:14px;
+}
+
+@media(max-width:900px){
+.hero{grid-template-columns:1fr}
+.hero h1{font-size:38px}
+.kpis,.roi-wrap,.tools-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -214,23 +229,12 @@ font-size:14px;
 
 <main>
 
-<!-- HERO -->
 <section class="hero container">
 <div>
 <span class="badge">Designed by an experienced Mechanical Design Engineer</span>
-
-<h1>
-ENGINEERING <span class="accent">AUTOMATION</span> THAT<br>
-SAVES DESIGN HOURS
-</h1>
-
+<h1>ENGINEERING <span class="accent">AUTOMATION</span> THAT<br>SAVES DESIGN HOURS</h1>
 <p>Fast, reliable SolidWorks automation built for real production teams.</p>
-
-<p>
-MetaMech Solution builds high-performance SolidWorks tools and custom macros
-to cut repetitive work, reduce human errors, and standardise outputs across
-your projects.
-</p>
+<p>MetaMech Solution builds high-performance SolidWorks tools and custom macros to cut repetitive work, reduce human errors, and standardise outputs across your projects.</p>
 
 <div class="actions">
 <a class="btn primary" href="/products/solidworks-automation-suite/">EXPLORE TOOLS</a>
@@ -246,77 +250,51 @@ your projects.
 </div>
 </section>
 
-<!-- ROI -->
-<section id="roi" class="section">
-<div class="container">
+<section id="roi" class="section container">
 <h2>ROI Calculator</h2>
-<p class="muted">
-Estimate weekly, monthly, and annual savings based on hours saved per engineer.
-</p>
 
 <div class="roi-wrap">
-
-<!-- INPUTS -->
 <div class="roi-card">
-<h3>Inputs</h3>
+<div class="roi-field"><label>Engineers</label><input id="eng" type="number" value="2"></div>
+<div class="roi-field"><label>Hours saved / week</label><input id="hrs" type="number" value="2"></div>
+<div class="roi-field"><label>Hourly cost (€)</label><input id="rate" type="number" value="45"></div>
+<div class="roi-field"><label>Weeks per year</label><input id="weeks" type="number" value="48"></div>
 
-<div class="roi-field">
-<label>Engineers using the tool</label>
-<input id="eng" type="number" value="2">
+<div class="email-box">
+<label>Email to receive ROI PDF</label>
+<input id="email" type="email" placeholder="you@company.com">
+<button class="btn primary" onclick="submitROI()">EMAIL MY ROI REPORT</button>
+</div>
 </div>
 
-<div class="roi-field">
-<label>Hours saved per week (per engineer)</label>
-<input id="hrs" type="number" value="2">
-</div>
-
-<div class="roi-field">
-<label>Hourly cost (€)</label>
-<input id="rate" type="number" value="45">
-</div>
-
-<div class="roi-field">
-<label>Weeks per year</label>
-<input id="weeks" type="number" value="48">
-</div>
-
-<div class="roi-field">
-<label>Select Plan</label>
-<select id="plan">
-<option value="499">Starter Pack – €499</option>
-<option value="999" selected>Standard Pack – €999</option>
-<option value="0">Enterprise – Custom</option>
-</select>
-</div>
-
-<div class="roi-field">
-<label>Tool cost (€)</label>
-<input id="cost" type="number" value="999">
-</div>
-
-<a class="btn primary" href="/products/solidworks-automation-suite/">
-CONTINUE TO CHECKOUT
-</a>
-
-<p class="roi-note">
-Tip: use your real internal cost rate (salary + overhead) for accurate ROI.
-</p>
-</div>
-
-<!-- OUTPUTS -->
 <div class="roi-card">
-<h3>Results</h3>
-
 <div class="roi-result" id="weekly">Weekly Savings: €0</div>
 <div class="roi-result" id="monthly">Monthly Savings: €0</div>
 <div class="roi-result" id="annual">Annual Savings: €0</div>
-<div class="roi-result" id="breakeven">Break-even: —</div>
+</div>
+</div>
+</section>
 
-<p class="roi-note">
-Break-even is calculated only if a tool cost is entered.
-</p>
+<section class="section container">
+<h2>AUTOMATION TOOLS</h2>
+
+<div class="tools-grid">
+<div class="tool-card">
+<h3>BOM AUTOMATION</h3>
+<p>Master BOM + TYPE sheets, property checks, consistent formatting.</p>
+<ul><li>All levels (TLA → parts)</li><li>Fast & reliable</li></ul>
 </div>
 
+<div class="tool-card">
+<h3>PDF MERGE + INDEX</h3>
+<p>Merge drawings into one indexed PDF.</p>
+<ul><li>BOM-driven order</li><li>Missing drawing logs</li></ul>
+</div>
+
+<div class="tool-card">
+<h3>STEP / DXF EXPORT</h3>
+<p>Auto export STEP & flat DXF with naming rules.</p>
+<ul><li>Material + thickness</li><li>Duplicate handling</li></ul>
 </div>
 </div>
 </section>
@@ -324,43 +302,19 @@ Break-even is calculated only if a tool cost is entered.
 </main>
 
 <footer>
-<div class="container">
-© 2026 MetaMech Solution · Engineering Automation · Galway, Ireland
-</div>
+<div class="container">© 2026 MetaMech Solution · Engineering Automation · Galway, Ireland</div>
 </footer>
 
 <script>
-const eng=document.getElementById('eng');
-const hrs=document.getElementById('hrs');
-const rate=document.getElementById('rate');
-const weeks=document.getElementById('weeks');
-const cost=document.getElementById('cost');
-
-const weekly=document.getElementById('weekly');
-const monthly=document.getElementById('monthly');
-const annual=document.getElementById('annual');
-const breakeven=document.getElementById('breakeven');
-
-function calc(){
-const w=+eng.value*+hrs.value*+rate.value;
-const m=w*4.33;
-const a=w*+weeks.value;
-
-weekly.textContent=`Weekly Savings: €${w.toLocaleString()}`;
-monthly.textContent=`Monthly Savings: €${m.toLocaleString()}`;
-annual.textContent=`Annual Savings: €${a.toLocaleString()}`;
-
-if(+cost.value>0){
-breakeven.textContent=`Break-even: ${(cost.value/w).toFixed(1)} weeks`;
-}else{
-breakeven.textContent=`Break-even: —`;
+function submitROI(){
+const email=document.getElementById('email').value;
+if(!email.includes('@')){
+alert('Please enter a valid email');
+return;
 }
+alert('ROI report will be sent shortly.');
 }
-
-[eng,hrs,rate,weeks,cost].forEach(i=>i.addEventListener('input',calc));
-calc();
 </script>
 
 </body>
 </html>
-
