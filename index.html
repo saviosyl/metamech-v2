@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>MetaMech Solution | Engineering Automation That Saves Design Hours</title>
-<meta name="description" content="Engineering automation and SOLIDWORKS macros that save design hours, reduce errors, and deliver measurable ROI for production teams.">
+<meta name="description" content="Engineering automation, SOLIDWORKS tools, and mechanical design services for medical, automation, and manufacturing industries.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <style>
@@ -37,19 +37,21 @@ a{text-decoration:none;color:inherit}
 /* HEADER */
 header{
 position:sticky;top:0;z-index:50;
-background:rgba(11,18,34,.95);
-backdrop-filter:blur(10px);
+background:rgba(11,18,34,.96);
 border-bottom:1px solid var(--line);
 }
 .nav{
 display:flex;align-items:center;justify-content:space-between;
 padding:16px 0;
 }
-.nav img{
-height:44px;
-display:block;
-filter:drop-shadow(0 0 6px rgba(22,179,184,.45));
+.logo-wrap{display:flex;align-items:center;gap:10px}
+.logo-wrap img{
+height:46px;
+background:#fff;
+padding:6px 10px;
+border-radius:10px;
 }
+.logo-text{font-weight:800;font-size:20px}
 .nav a{margin-left:18px;color:var(--muted);font-size:14px}
 .nav a:hover{color:var(--text)}
 
@@ -61,7 +63,6 @@ grid-template-columns:1.15fr .85fr;
 gap:30px;
 align-items:center;
 }
-
 .badge{
 display:inline-block;
 padding:8px 14px;
@@ -71,63 +72,34 @@ background:rgba(22,179,184,.15);
 font-size:13px;
 margin-bottom:16px;
 }
-
-.hero h1{
-font-size:52px;
-line-height:1.05;
-margin:0 0 18px 0;
-}
-
+.hero h1{font-size:52px;line-height:1.05;margin:0 0 18px}
 .accent{
 background:linear-gradient(135deg,var(--accent),var(--accent2));
--webkit-background-clip:text;
-color:transparent;
+-webkit-background-clip:text;color:transparent;
 }
-
-.hero p{
-font-size:17px;
-color:var(--muted);
-max-width:680px;
-margin-bottom:14px;
-}
-
-.actions{
-display:flex;
-gap:14px;
-flex-wrap:wrap;
-margin-top:26px;
-}
-
+.hero p{font-size:17px;color:var(--muted);max-width:680px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
 .btn{
-padding:14px 22px;
-border-radius:14px;
-font-weight:700;
-border:1px solid var(--line);
+padding:14px 22px;border-radius:14px;
+font-weight:700;border:1px solid var(--line);
 background:rgba(255,255,255,.03);
-cursor:pointer;
 }
 .btn.primary{
 background:linear-gradient(135deg,var(--accent),var(--accent2));
-color:#07111a;
-border:none;
+color:#07111a;border:none;
 }
 .btn.trial{
 background:linear-gradient(135deg,#f0b429,#d39b1c);
 color:#07111a;
 }
-
-/* KPI */
 .kpis{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:14px;
-margin-top:36px;
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:14px;margin-top:36px;
 }
 .kpi{
 background:linear-gradient(180deg,var(--panel),var(--panel2));
 border:1px solid var(--line);
-border-radius:16px;
-padding:18px;
+border-radius:16px;padding:18px;
 }
 .kpi strong{font-size:18px}
 
@@ -135,80 +107,55 @@ padding:18px;
 .section{padding:80px 0}
 
 /* ROI */
-.roi-wrap{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:28px;
-margin-top:36px;
-}
+.roi-wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .roi-card{
 background:linear-gradient(180deg,#0f1c34,#0b1428);
 border:1px solid var(--line);
-border-radius:22px;
-padding:30px;
+border-radius:22px;padding:30px;
 }
 .roi-field{margin-bottom:16px}
-.roi-field label{
-display:block;font-size:14px;color:var(--muted);margin-bottom:6px;
-}
-.roi-field input,.roi-field select{
+.roi-field label{display:block;font-size:14px;color:var(--muted);margin-bottom:6px}
+.roi-field input{
 width:100%;padding:14px;border-radius:12px;
-border:1px solid var(--line);background:#0b162c;color:var(--text);
+border:1px solid var(--line);background:#0b162c;color:var(--text)
 }
 .roi-result{
 background:linear-gradient(180deg,var(--panel),var(--panel2));
 border:1px solid var(--line);
-border-radius:16px;
-padding:18px;
-margin-bottom:14px;
-font-size:18px;font-weight:700;
+border-radius:16px;padding:18px;margin-bottom:14px;font-weight:700
 }
 
-/* EMAIL CAPTURE */
-.email-box{
-margin-top:20px;
-padding-top:18px;
-border-top:1px solid var(--line);
+/* AUTOMATION TOOLS / CARDS */
+.grid-3{
+display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px
 }
-.email-box input{
-width:100%;
-padding:14px;
-border-radius:12px;
-border:1px solid var(--line);
-background:#0b162c;
-color:var(--text);
-margin-bottom:12px;
-}
-
-/* AUTOMATION TOOLS */
-.tools-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
-margin-top:36px;
-}
-.tool-card{
+.card{
 background:linear-gradient(180deg,#0f1c34,#0b1428);
 border:1px solid var(--line);
-border-radius:22px;
-padding:28px;
+border-radius:22px;padding:28px;
 }
-.tool-card h3{margin-top:0}
-.tool-card p{color:var(--muted)}
-.tool-card ul{padding-left:18px}
+.card h3{margin-top:0}
+.card p{color:var(--muted)}
+.card ul{padding-left:18px}
 
-/* FOOTER */
+/* INDUSTRY TAGS */
+.tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.tag{
+padding:8px 14px;border-radius:999px;
+border:1px solid var(--line);
+background:rgba(255,255,255,.04);
+font-size:13px
+}
+
 footer{
 border-top:1px solid var(--line);
-padding:32px 0;
-color:var(--muted);
-font-size:14px;
+padding:32px 0;color:var(--muted);font-size:14px
 }
 
 @media(max-width:900px){
 .hero{grid-template-columns:1fr}
 .hero h1{font-size:38px}
-.kpis,.roi-wrap,.tools-grid{grid-template-columns:1fr}
+.kpis,.roi-wrap,.grid-3{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -217,7 +164,11 @@ font-size:14px;
 
 <header>
 <div class="container nav">
-<a href="/"><img src="/assets/logo/metamech-logo.png" alt="MetaMech Solution"></a>
+<a href="/" class="logo-wrap">
+<img src="/assets/logo/metamech-logo.png"
+     onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+<span class="logo-text" style="display:none">METAMECH</span>
+</a>
 <nav>
 <a href="/products/">Products</a>
 <a href="/services/solidworks-macros/">Services</a>
@@ -229,19 +180,18 @@ font-size:14px;
 
 <main>
 
+<!-- HERO -->
 <section class="hero container">
 <div>
 <span class="badge">Designed by an experienced Mechanical Design Engineer</span>
 <h1>ENGINEERING <span class="accent">AUTOMATION</span> THAT<br>SAVES DESIGN HOURS</h1>
 <p>Fast, reliable SolidWorks automation built for real production teams.</p>
-<p>MetaMech Solution builds high-performance SolidWorks tools and custom macros to cut repetitive work, reduce human errors, and standardise outputs across your projects.</p>
-
+<p>MetaMech Solution builds high-performance SolidWorks tools and custom macros to cut repetitive work, reduce errors, and standardise outputs across your projects.</p>
 <div class="actions">
 <a class="btn primary" href="/products/solidworks-automation-suite/">EXPLORE TOOLS</a>
 <a class="btn" href="#roi">CALCULATE ROI</a>
 <a class="btn trial" href="/trial/">DOWNLOAD 3-DAY TRIAL</a>
 </div>
-
 <div class="kpis">
 <div class="kpi"><strong>1-CLICK OUTPUTS</strong><br>BOM, PDF, STEP, DXF</div>
 <div class="kpi"><strong>WORKFLOW FIT</strong><br>Your standards & folders</div>
@@ -250,51 +200,110 @@ font-size:14px;
 </div>
 </section>
 
+<!-- ROI -->
 <section id="roi" class="section container">
 <h2>ROI Calculator</h2>
-
 <div class="roi-wrap">
 <div class="roi-card">
-<div class="roi-field"><label>Engineers</label><input id="eng" type="number" value="2"></div>
-<div class="roi-field"><label>Hours saved / week</label><input id="hrs" type="number" value="2"></div>
-<div class="roi-field"><label>Hourly cost (€)</label><input id="rate" type="number" value="45"></div>
-<div class="roi-field"><label>Weeks per year</label><input id="weeks" type="number" value="48"></div>
-
-<div class="email-box">
-<label>Email to receive ROI PDF</label>
-<input id="email" type="email" placeholder="you@company.com">
-<button class="btn primary" onclick="submitROI()">EMAIL MY ROI REPORT</button>
+<div class="roi-field"><label>Engineers</label><input value="2"></div>
+<div class="roi-field"><label>Hours saved / week</label><input value="2"></div>
+<div class="roi-field"><label>Hourly cost (€)</label><input value="45"></div>
 </div>
-</div>
-
 <div class="roi-card">
-<div class="roi-result" id="weekly">Weekly Savings: €0</div>
-<div class="roi-result" id="monthly">Monthly Savings: €0</div>
-<div class="roi-result" id="annual">Annual Savings: €0</div>
+<div class="roi-result">Weekly Savings: €180</div>
+<div class="roi-result">Monthly Savings: €779</div>
+<div class="roi-result">Annual Savings: €8,640</div>
 </div>
 </div>
 </section>
 
+<!-- AUTOMATION TOOLS -->
 <section class="section container">
 <h2>AUTOMATION TOOLS</h2>
-
-<div class="tools-grid">
-<div class="tool-card">
+<div class="grid-3">
+<div class="card">
 <h3>BOM AUTOMATION</h3>
 <p>Master BOM + TYPE sheets, property checks, consistent formatting.</p>
 <ul><li>All levels (TLA → parts)</li><li>Fast & reliable</li></ul>
 </div>
-
-<div class="tool-card">
+<div class="card">
 <h3>PDF MERGE + INDEX</h3>
-<p>Merge drawings into one indexed PDF.</p>
+<p>Merge drawings into a single indexed PDF.</p>
 <ul><li>BOM-driven order</li><li>Missing drawing logs</li></ul>
 </div>
-
-<div class="tool-card">
+<div class="card">
 <h3>STEP / DXF EXPORT</h3>
-<p>Auto export STEP & flat DXF with naming rules.</p>
-<ul><li>Material + thickness</li><li>Duplicate handling</li></ul>
+<p>Auto export STEP and sheet-metal DXF with rules.</p>
+<ul><li>Material & thickness naming</li><li>Duplicate handling</li></ul>
+</div>
+</div>
+</section>
+
+<!-- TYPICAL INDUSTRIES -->
+<section class="section container">
+<h2>TYPICAL INDUSTRIES</h2>
+<p class="muted">We support engineering-driven industries with both automation tools and hands-on mechanical design expertise.</p>
+<div class="tags">
+<span class="tag">Medical devices</span>
+<span class="tag">Automation</span>
+<span class="tag">Conveyors</span>
+<span class="tag">System integration</span>
+<span class="tag">Manufacturing</span>
+</div>
+
+<div class="grid-3">
+<div class="card">
+<h3>Medical & Life Sciences</h3>
+<p>Medical equipment, fixtures, validation-friendly automation, clean design practices.</p>
+</div>
+<div class="card">
+<h3>Industrial Automation</h3>
+<p>Automation cells, guarding, operator stations, production-ready layouts.</p>
+</div>
+<div class="card">
+<h3>Conveying & Material Handling</h3>
+<p>Modular and bespoke conveyors, transfers, lifts, integrated flow systems.</p>
+</div>
+</div>
+</section>
+
+<!-- MECHANICAL DESIGN SERVICES -->
+<section class="section container">
+<h2>MECHANICAL DESIGN SERVICES</h2>
+<p class="muted">Beyond automation, we provide end-to-end mechanical design — from concept to manufacturing-ready deliverables.</p>
+
+<div class="grid-3">
+<div class="card">
+<h3>Mechanical Design & Engineering</h3>
+<ul>
+<li>Medical equipment & automation cells</li>
+<li>Custom machine design</li>
+<li>Conveyor system design</li>
+<li>Application engineering</li>
+<li>System-level layouts</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>CAD, Layout & Manufacturing</h3>
+<ul>
+<li>3D modelling & large assemblies</li>
+<li>2D → 3D conversion</li>
+<li>Manufacturing drawings & tolerances</li>
+<li>DXF for laser & sheet metal</li>
+<li>Production drawing packs</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Design Libraries & Standards</h3>
+<ul>
+<li>Weldment libraries (incl. ITEM)</li>
+<li>Custom profiles & structures</li>
+<li>Reusable standard parts</li>
+<li>Property & naming standards</li>
+<li>Maintainable design libraries</li>
+</ul>
 </div>
 </div>
 </section>
@@ -304,17 +313,6 @@ font-size:14px;
 <footer>
 <div class="container">© 2026 MetaMech Solution · Engineering Automation · Galway, Ireland</div>
 </footer>
-
-<script>
-function submitROI(){
-const email=document.getElementById('email').value;
-if(!email.includes('@')){
-alert('Please enter a valid email');
-return;
-}
-alert('ROI report will be sent shortly.');
-}
-</script>
 
 </body>
 </html>
