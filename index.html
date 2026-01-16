@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>MetaMech Solution | SOLIDWORKS Automation for Engineering Teams</title>
-<meta name="description" content="Commercial-grade SOLIDWORKS automation tools that eliminate repetitive work, reduce errors, and scale engineering output.">
+<title>MetaMech Solution | SOLIDWORKS Automation with Proven ROI</title>
+<meta name="description" content="SOLIDWORKS automation tools that eliminate repetitive work, reduce errors, and deliver measurable ROI for engineering teams.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<!-- GA4 ANALYTICS -->
+<!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
+window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXXXX');
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX');
 </script>
 
 <style>
@@ -44,9 +44,9 @@ border-bottom:1px solid var(--border)
 nav a{margin-left:18px;font-size:14px;color:var(--muted)}
 nav a:hover{color:var(--text)}
 
-.hero{padding:90px 0 60px}
+.hero{padding:90px 0 70px}
 .hero h1{font-size:48px;line-height:1.05}
-.hero p{font-size:18px;color:var(--muted);max-width:760px}
+.hero p{font-size:18px;color:var(--muted);max-width:780px}
 .actions{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
 
 .btn{
@@ -67,10 +67,27 @@ border-radius:var(--radius);
 padding:26px
 }
 
-form input,form textarea{
-width:100%;padding:14px;margin-bottom:14px;
-border-radius:12px;border:1px solid var(--border);
-background:#0f1a32;color:var(--text)
+.roi-box{
+background:linear-gradient(180deg,#0f1c34,#0b1428);
+border:1px solid var(--border);
+border-radius:20px;
+padding:32px;
+margin-top:40px
+}
+.roi-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:16px
+}
+.roi-box input{
+width:100%;padding:14px;border-radius:12px;
+border:1px solid var(--border);
+background:#0b162c;color:var(--text)
+}
+.roi-result{
+margin-top:24px;
+font-size:20px;
+font-weight:700
 }
 
 footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font-size:14px}
@@ -95,43 +112,53 @@ footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font
 
 <main>
 
+<!-- PRODUCT HERO -->
 <section class="hero container">
-  <h1>SOLIDWORKS Automation Built for Real Engineering Teams</h1>
+  <h1>SOLIDWORKS Automation with Measurable ROI</h1>
   <p>
-    Eliminate repetitive engineering work, standardise outputs,
-    and safely automate large SOLIDWORKS assemblies.
+    MetaMech removes repetitive engineering work, standardises outputs,
+    and delivers proven time and cost savings for SOLIDWORKS teams.
   </p>
 
   <div class="actions">
     <a class="btn" href="/products/solidworks-automation-suite/">View Automation Suite</a>
-    <a class="btn secondary" href="#demo">Request Demo</a>
+    <a class="btn secondary" href="#roi">Calculate ROI</a>
   </div>
 </section>
 
+<!-- PROOF STRIP -->
 <section class="section">
-<div class="container">
-<h2>Proven in Production</h2>
-<div class="grid">
-<div class="card"><strong>Medical Equipment OEM</strong>Validated large assemblies with zero BOM errors.</div>
-<div class="card"><strong>Automation Integrator</strong>Standardised outputs across multiple engineers.</div>
-<div class="card"><strong>Manufacturing Team</strong>Automated DXF, STEP & PDF release.</div>
-</div>
+<div class="container grid">
+<div class="card"><strong>30–70%</strong><br>Documentation time reduction</div>
+<div class="card"><strong>Large Assembly Safe</strong><br>Validated on complex TLAs</div>
+<div class="card"><strong>Production Proven</strong><br>Used in real engineering teams</div>
 </div>
 </section>
 
-<!-- DEMO FUNNEL -->
-<section id="demo" class="section">
+<!-- ROI CALCULATOR -->
+<section id="roi" class="section">
 <div class="container">
-<h2>Request a Product Demo</h2>
-<p class="muted">Tell us about your SOLIDWORKS environment.</p>
+<h2>Calculate Your ROI</h2>
+<p class="muted">
+Estimate savings from automating BOMs, PDFs, renumbering, and documentation.
+</p>
 
-<form onsubmit="gtag('event','demo_request');">
-<input placeholder="Full Name" required>
-<input placeholder="Company" required>
-<input placeholder="Work Email" required>
-<textarea rows="4" placeholder="What do you want to automate?" required></textarea>
-<button class="btn" type="submit">Request Demo</button>
-</form>
+<div class="roi-box">
+<div class="roi-grid">
+<input id="eng" type="number" placeholder="Number of engineers" value="3">
+<input id="hrs" type="number" placeholder="Hours saved / week per engineer" value="3">
+<input id="rate" type="number" placeholder="Hourly cost (€)" value="45">
+</div>
+
+<div class="roi-result" id="roiResult">
+Annual savings: —
+</div>
+
+<div class="actions" style="margin-top:20px">
+<a class="btn" href="/products/solidworks-automation-suite/">View Pricing</a>
+<a class="btn secondary" href="/contact/">Request Demo</a>
+</div>
+</div>
 </div>
 </section>
 
@@ -142,6 +169,29 @@ footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font
 © 2026 MetaMech Solution · Engineering Automation · Galway, Ireland
 </div>
 </footer>
+
+<script>
+function calcROI(){
+const eng=+engEl.value||0;
+const hrs=+hrsEl.value||0;
+const rate=+rateEl.value||0;
+const annual=eng*hrs*rate*48;
+roiResult.textContent=annual
+?`Estimated annual savings: €${annual.toLocaleString()}`
+:'Annual savings: —';
+}
+const engEl=document.getElementById('eng');
+const hrsEl=document.getElementById('hrs');
+const rateEl=document.getElementById('rate');
+const roiResult=document.getElementById('roiResult');
+
+[engEl,hrsEl,rateEl].forEach(el=>{
+el.addEventListener('input',()=>{
+calcROI();
+gtag('event','roi_calculated');
+});
+});
+</script>
 
 </body>
 </html>
