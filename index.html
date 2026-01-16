@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>MetaMech Solution | SOLIDWORKS Automation with Proven ROI</title>
-<meta name="description" content="SOLIDWORKS automation tools that eliminate repetitive work, reduce errors, and deliver measurable ROI for engineering teams.">
+<title>MetaMech Solution | Engineering Automation That Saves Design Hours</title>
+<meta name="description" content="Engineering automation and SOLIDWORKS macros that save design hours, reduce errors, and standardise outputs for production teams.">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <!-- GA4 -->
@@ -17,146 +17,234 @@ gtag('config','G-XXXXXXXXXX');
 
 <style>
 :root{
---bg:#0b1220;--panel:#111a2e;--panel2:#16223c;
---text:#eef2ff;--muted:#b9c6e4;
---accent:#18c1c8;--accent2:#f0b429;
---border:rgba(255,255,255,.08);
---radius:16px;--maxw:1180px;
+--bg:#0b1222;
+--panel:#0f1b34;
+--panel2:#132247;
+--text:#fbfdff;
+--muted:#c9d4f0;
+--accent:#16b3b8;
+--accent2:#f0b429;
+--line:rgba(255,255,255,.12);
+--radius:18px;
 }
+
 *{box-sizing:border-box}
 body{
-margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto;
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto;
 background:
-radial-gradient(900px 500px at 15% 0,rgba(24,193,200,.18),transparent),
-radial-gradient(900px 500px at 85% 10%,rgba(240,180,41,.12),transparent),
+radial-gradient(1100px 650px at 18% 8%, rgba(22,179,184,.18), transparent 62%),
+radial-gradient(950px 620px at 82% 0%, rgba(240,180,41,.12), transparent 60%),
 var(--bg);
-color:var(--text);line-height:1.65;
+color:var(--text);
+line-height:1.65;
 }
+
 a{text-decoration:none;color:inherit}
-.container{max-width:var(--maxw);margin:auto;padding:0 20px}
+.container{max-width:1180px;margin:auto;padding:0 20px}
+
+/* HEADER */
 header{
 position:sticky;top:0;z-index:50;
-background:rgba(11,18,32,.92);
+background:rgba(11,18,34,.9);
 backdrop-filter:blur(10px);
-border-bottom:1px solid var(--border)
+border-bottom:1px solid var(--line);
 }
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-nav a{margin-left:18px;font-size:14px;color:var(--muted)}
-nav a:hover{color:var(--text)}
+.nav{
+display:flex;align-items:center;justify-content:space-between;
+padding:14px 0;
+}
+.nav img{height:36px}
+.nav a{margin-left:18px;color:var(--muted);font-size:14px}
+.nav a:hover{color:var(--text)}
 
-.hero{padding:90px 0 70px}
-.hero h1{font-size:48px;line-height:1.05}
-.hero p{font-size:18px;color:var(--muted);max-width:780px}
-.actions{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+/* HERO */
+.hero{
+padding:90px 0 60px;
+display:grid;
+grid-template-columns:1.15fr .85fr;
+gap:30px;
+align-items:center;
+}
+
+.badge{
+display:inline-block;
+padding:8px 14px;
+border-radius:999px;
+border:1px solid rgba(22,179,184,.5);
+background:rgba(22,179,184,.15);
+font-size:13px;
+margin-bottom:16px;
+}
+
+.hero h1{
+font-size:52px;
+line-height:1.05;
+margin:0 0 18px 0;
+}
+
+.accent{
+background:linear-gradient(135deg,var(--accent),var(--accent2));
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+font-size:17px;
+color:var(--muted);
+max-width:680px;
+margin-bottom:14px;
+}
+
+.actions{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+margin-top:26px;
+}
 
 .btn{
-padding:14px 22px;border-radius:12px;
+padding:14px 22px;
+border-radius:14px;
+font-weight:700;
+border:1px solid var(--line);
+background:rgba(255,255,255,.03);
+}
+.btn.primary{
 background:linear-gradient(135deg,var(--accent),var(--accent2));
-color:#071016;font-weight:800
+color:#07111a;
+border:none;
 }
-.btn.secondary{
-background:none;border:1px solid var(--border);color:var(--text)
+.btn.trial{
+background:linear-gradient(135deg,#f0b429,#d39b1c);
+color:#07111a;
 }
 
-.section{padding:80px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
-.card{
+/* KPI CARDS */
+.kpis{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+margin-top:36px;
+}
+.kpi{
 background:linear-gradient(180deg,var(--panel),var(--panel2));
-border:1px solid var(--border);
-border-radius:var(--radius);
-padding:26px
+border:1px solid var(--line);
+border-radius:16px;
+padding:18px;
 }
+.kpi strong{font-size:18px}
 
-.roi-box{
+/* ROI */
+.section{padding:80px 0}
+.roi{
 background:linear-gradient(180deg,#0f1c34,#0b1428);
-border:1px solid var(--border);
-border-radius:20px;
-padding:32px;
-margin-top:40px
+border:1px solid var(--line);
+border-radius:22px;
+padding:34px;
 }
 .roi-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:16px
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
 }
-.roi-box input{
-width:100%;padding:14px;border-radius:12px;
-border:1px solid var(--border);
-background:#0b162c;color:var(--text)
+.roi input{
+padding:14px;
+border-radius:12px;
+border:1px solid var(--line);
+background:#0b162c;
+color:var(--text);
 }
 .roi-result{
-margin-top:24px;
+margin-top:22px;
 font-size:20px;
-font-weight:700
+font-weight:700;
 }
 
-footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted);font-size:14px}
+/* FOOTER */
+footer{
+border-top:1px solid var(--line);
+padding:32px 0;
+color:var(--muted);
+font-size:14px;
+}
 
-@media(max-width:900px){.hero h1{font-size:36px}}
+@media(max-width:900px){
+.hero{grid-template-columns:1fr}
+.hero h1{font-size:38px}
+.kpis{grid-template-columns:1fr}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="container nav">
-    <a href="/"><img src="/assets/logo/metamech-logo.png" alt="MetaMech Solution" style="height:36px"></a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/products/">Products</a>
-      <a href="/services/solidworks-macros/">Services</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-  </div>
+<div class="container nav">
+<a href="/"><img src="/assets/logo/metamech-logo.png" alt="MetaMech Solution"></a>
+<nav>
+<a href="/products/">Products</a>
+<a href="/services/solidworks-macros/">Services</a>
+<a href="/blog/">Blog</a>
+<a href="/contact/">Contact</a>
+</nav>
+</div>
 </header>
 
 <main>
 
-<!-- PRODUCT HERO -->
+<!-- HERO -->
 <section class="hero container">
-  <h1>SOLIDWORKS Automation with Measurable ROI</h1>
-  <p>
-    MetaMech removes repetitive engineering work, standardises outputs,
-    and delivers proven time and cost savings for SOLIDWORKS teams.
-  </p>
+<div>
+<span class="badge">Designed by an experienced Mechanical Design Engineer</span>
 
-  <div class="actions">
-    <a class="btn" href="/products/solidworks-automation-suite/">View Automation Suite</a>
-    <a class="btn secondary" href="#roi">Calculate ROI</a>
-  </div>
-</section>
+<h1>
+ENGINEERING <span class="accent">AUTOMATION</span> THAT<br>
+SAVES DESIGN HOURS
+</h1>
 
-<!-- PROOF STRIP -->
-<section class="section">
-<div class="container grid">
-<div class="card"><strong>30–70%</strong><br>Documentation time reduction</div>
-<div class="card"><strong>Large Assembly Safe</strong><br>Validated on complex TLAs</div>
-<div class="card"><strong>Production Proven</strong><br>Used in real engineering teams</div>
+<p>
+Fast, reliable SolidWorks automation built for real production teams.
+</p>
+
+<p>
+MetaMech Solution builds high-performance SolidWorks tools and custom macros
+to cut repetitive work, reduce human errors, and standardise outputs across
+your projects.
+</p>
+
+<div class="actions">
+<a class="btn primary" href="/products/solidworks-automation-suite/">EXPLORE TOOLS</a>
+<a class="btn" href="#roi">CALCULATE ROI</a>
+<a class="btn trial" href="/trial/">DOWNLOAD 3-DAY TRIAL</a>
+</div>
+
+<div class="kpis">
+<div class="kpi"><strong>1-CLICK OUTPUTS</strong><br>BOM, PDF, STEP, DXF</div>
+<div class="kpi"><strong>WORKFLOW FIT</strong><br>Your standards & folders</div>
+<div class="kpi"><strong>ROI FOCUSED</strong><br>Save hours every week</div>
+</div>
 </div>
 </section>
 
-<!-- ROI CALCULATOR -->
+<!-- ROI -->
 <section id="roi" class="section">
 <div class="container">
 <h2>Calculate Your ROI</h2>
-<p class="muted">
-Estimate savings from automating BOMs, PDFs, renumbering, and documentation.
-</p>
+<p class="muted">See how quickly automation pays for itself.</p>
 
-<div class="roi-box">
+<div class="roi">
 <div class="roi-grid">
-<input id="eng" type="number" placeholder="Number of engineers" value="3">
-<input id="hrs" type="number" placeholder="Hours saved / week per engineer" value="3">
+<input id="eng" type="number" placeholder="Engineers" value="3">
+<input id="hrs" type="number" placeholder="Hours saved / week" value="3">
 <input id="rate" type="number" placeholder="Hourly cost (€)" value="45">
 </div>
 
-<div class="roi-result" id="roiResult">
-Annual savings: —
-</div>
+<div class="roi-result" id="roiResult">Estimated annual savings: —</div>
 
-<div class="actions" style="margin-top:20px">
-<a class="btn" href="/products/solidworks-automation-suite/">View Pricing</a>
-<a class="btn secondary" href="/contact/">Request Demo</a>
+<div class="actions" style="margin-top:18px">
+<a class="btn primary" href="/products/solidworks-automation-suite/">VIEW PRICING</a>
+<a class="btn" href="/contact/">REQUEST DEMO</a>
 </div>
 </div>
 </div>
@@ -171,26 +259,19 @@ Annual savings: —
 </footer>
 
 <script>
-function calcROI(){
-const eng=+engEl.value||0;
-const hrs=+hrsEl.value||0;
-const rate=+rateEl.value||0;
-const annual=eng*hrs*rate*48;
-roiResult.textContent=annual
-?`Estimated annual savings: €${annual.toLocaleString()}`
-:'Annual savings: —';
-}
-const engEl=document.getElementById('eng');
-const hrsEl=document.getElementById('hrs');
-const rateEl=document.getElementById('rate');
-const roiResult=document.getElementById('roiResult');
+const eng=document.getElementById('eng');
+const hrs=document.getElementById('hrs');
+const rate=document.getElementById('rate');
+const out=document.getElementById('roiResult');
 
-[engEl,hrsEl,rateEl].forEach(el=>{
-el.addEventListener('input',()=>{
-calcROI();
+function calc(){
+const v=+eng.value*+hrs.value*+rate.value*48;
+out.textContent=v
+?`Estimated annual savings: €${v.toLocaleString()}`
+:'Estimated annual savings: —';
 gtag('event','roi_calculated');
-});
-});
+}
+[eng,hrs,rate].forEach(i=>i.addEventListener('input',calc));
 </script>
 
 </body>
