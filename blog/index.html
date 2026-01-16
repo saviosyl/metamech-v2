@@ -1,12 +1,91 @@
 <!doctype html>
-<html><body style="background:#0b1222;color:#fff;font-family:system-ui">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Engineering Automation Blog | MetaMech Solution</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Engineering insights on SOLIDWORKS automation, mechanical design workflows, and production-ready CAD practices.">
+
+<style>
+/* === SAME CORE UI === */
+:root{
+--bg:#0b1220;--panel:#111a2e;--panel2:#16223c;
+--text:#eef2ff;--muted:#b9c6e4;
+--accent:#18c1c8;--accent2:#f0b429;
+--border:rgba(255,255,255,.08);--radius:16px;--maxw:1180px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Segoe UI,Roboto;background:var(--bg);color:var(--text)}
+a{text-decoration:none;color:inherit}
+.container{max-width:var(--maxw);margin:auto;padding:0 20px}
+header{background:#0b1220;border-bottom:1px solid var(--border)}
+.nav{display:flex;justify-content:space-between;padding:16px 0}
+nav a{margin-left:18px;color:var(--muted)}
+.section{padding:70px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.card:hover{transform:translateY(-4px);transition:.25s}
+footer{border-top:1px solid var(--border);padding:30px;color:var(--muted)}
+</style>
+</head>
+
+<body>
+<header>
+<div class="container nav">
+<strong>MetaMech Solution</strong>
+<nav>
+<a href="/">Home</a>
+<a href="/services/solidworks-macros/">Services</a>
+<a href="/products/">Products</a>
+</nav>
+</div>
+</header>
+
+<section class="section">
+<div class="container">
 <h1>Engineering Automation Blog</h1>
-<ul>
-<li>SOLIDWORKS BOM Automation for Large Assemblies</li>
-<li>How SOLIDWORKS Macros Reduce Engineering Time</li>
-<li>Concept Development to 3D CAD</li>
-<li>2D vs 3D Design</li>
-<li>Standardising Custom Properties</li>
-<li>Why Renumbering Automation Prevents Errors</li>
-</ul>
-</body></html>
+<p class="muted">Practical guidance from real production engineering experience.</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>SOLIDWORKS BOM Automation for Large Assemblies</h3>
+<p>How to reliably generate BOMs from deep TLA structures.</p>
+<a href="/blog/solidworks-bom-automation/">Read article →</a>
+</div>
+
+<div class="card">
+<h3>How SOLIDWORKS Macros Reduce Engineering Time by 30–70%</h3>
+<p>Measured ROI from real automation use cases.</p>
+<a href="/blog/solidworks-macros-roi/">Read article →</a>
+</div>
+
+<div class="card">
+<h3>Concept Development to 3D CAD: Practical Workflow</h3>
+<a href="/blog/concept-to-3d-workflow/">Read article →</a>
+</div>
+
+<div class="card">
+<h3>2D vs 3D Design: When Each Matters</h3>
+<a href="/blog/2d-vs-3d-design/">Read article →</a>
+</div>
+
+<div class="card">
+<h3>Standardising Custom Properties in SOLIDWORKS</h3>
+<a href="/blog/custom-properties-solidworks/">Read article →</a>
+</div>
+
+<div class="card">
+<h3>Why Renumbering Automation Prevents Drawing Errors</h3>
+<a href="/blog/renumbering-automation/">Read article →</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">© 2026 MetaMech Solution</div>
+</footer>
+</body>
+</html>
